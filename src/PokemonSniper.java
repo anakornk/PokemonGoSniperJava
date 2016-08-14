@@ -21,11 +21,11 @@ public class PokemonSniper{
 	private static String googleorptc;
 
 	private static double latitude;
-	private static double longtitude;
+	private static double longitude;
 
 	
 	private static double catchLatitude;
-	private static double catchLongtitude;
+	private static double catchLongitude;
 	
 	private static Scanner sc = new Scanner(System.in);
 	
@@ -43,9 +43,9 @@ public class PokemonSniper{
         }
         try{
         	catchLatitude = Double.parseDouble(tempStr.substring(0, tempIndex-1));	        
-	        catchLongtitude = Double.parseDouble(tempStr.substring(tempIndex+1));
+	        catchLongitude = Double.parseDouble(tempStr.substring(tempIndex+1));
 	        
-	        go.setLocation(catchLatitude, catchLongtitude,0);
+	        go.setLocation(catchLatitude, catchLongitude,0);
 	        System.out.println("Warped to: " +  go.getLatitude() + ","+ go.getLongitude());
 	        
 	        //get pokemon info
@@ -64,7 +64,7 @@ public class PokemonSniper{
 	        	EncounterResult encResult = cp.encounterPokemon();
 				if (encResult.wasSuccessful()) {
 					System.out.println("Encountered:" + cp.getPokemonId());
-					go.setLocation(latitude,longtitude, 0);
+					go.setLocation(latitude,longitude, 0);
 					System.out.println("Warped back to: " +  go.getLatitude() + ","+ go.getLongitude());
 					CatchResult result = cp.catchPokemon();
 					System.out.println("Catch Status: " + result.getStatus());
@@ -104,7 +104,7 @@ public class PokemonSniper{
 		pass = prop.getProperty("PASSWORD");
 		googleorptc = prop.getProperty("GOOGLEORPTC");
 		latitude = Double.parseDouble(prop.getProperty("LATITUDE"));
-		longtitude = Double.parseDouble(prop.getProperty("LONGTITUDE"));
+		longitude = Double.parseDouble(prop.getProperty("LONGITUDE"));
 		
 		
 		
@@ -119,7 +119,7 @@ public class PokemonSniper{
             		
             	}
             	
-            	go.setLocation(latitude, longtitude,0);
+            	go.setLocation(latitude, longitude,0);
             	System.out.println("Warped back to:" +  go.getLatitude() + ","+ go.getLongitude());           	
             	System.out.println("Exited");
             }
@@ -139,7 +139,7 @@ public class PokemonSniper{
 				}
 				System.out.println("Hello "+go.getPlayerProfile().getPlayerData().getUsername() + ", Your level: "+ go.getPlayerProfile().getStats().getLevel());				 
 				// Set to current location
-				go.setLocation(latitude, longtitude,0);
+				go.setLocation(latitude, longitude,0);
 				System.out.println("Your current location: " +  go.getLatitude() + ","+ go.getLongitude());
 				System.out.println("----------------Wait for five seconds----------------");
 	        	sleep(5000);
@@ -160,7 +160,7 @@ public class PokemonSniper{
 				
 				}else if(cmd.equals("help")){
 					System.out.println("List of commands:");
-					System.out.println("catch - catch pokemon according to the given latitude and longtitude");
+					System.out.println("catch - catch pokemon according to the given latitude and longitude");
 					System.out.println("exit - exit the program");
 				}else if(cmd.equals("exit")){
 					break;
