@@ -1,0 +1,2 @@
+# PokemonGoSniperJava
+FOR EDUCATIONAL PURPOSES ONLY
