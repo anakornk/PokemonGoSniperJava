@@ -132,7 +132,10 @@ public class PokemonSniper{
 					System.out.println("MOVE 2:" + encResult.getPokemonData().getMove2());
 					int ivAttack = encResult.getPokemonData().getIndividualAttack();
 					int ivDefense = encResult.getPokemonData().getIndividualDefense();
-					int ivStamina = encResult.getPokemonData().getIndividualStamina();		
+					int ivStamina = encResult.getPokemonData().getIndividualStamina();	
+					System.out.println("Individual Attack: " + ivAttack);
+					System.out.println("Individual Defense: " + ivDefense);
+					System.out.println("Individual Stamina: " + ivStamina);
 					System.out.println("IV Perfection:" +(ivAttack + ivDefense + ivStamina)*100/45.0 + "%");
 					
 	
@@ -197,7 +200,10 @@ public class PokemonSniper{
 							System.out.println("MOVE 2:" + encResult.getPokemonData().getMove2());
 							int ivAttack = encResult.getPokemonData().getIndividualAttack();
 							int ivDefense = encResult.getPokemonData().getIndividualDefense();
-							int ivStamina = encResult.getPokemonData().getIndividualStamina();		
+							int ivStamina = encResult.getPokemonData().getIndividualStamina();	
+							System.out.println("Individual Attack: " + ivAttack);
+							System.out.println("Individual Defense: " + ivDefense);
+							System.out.println("Individual Stamina: " + ivStamina);
 							System.out.println("IV Perfection:" +(ivAttack + ivDefense + ivStamina)*100/45.0 + "%");
 							
 						}else{
